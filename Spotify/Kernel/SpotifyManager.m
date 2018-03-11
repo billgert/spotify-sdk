@@ -21,8 +21,8 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.auth = [SPTAuth defaultInstance];
-        self.auth.clientID = @"{CLIENT_ID}";
-        self.auth.redirectURL = [NSURL URLWithString:@"{REDIRECT_URL}"];
+        self.auth.clientID = @"";
+        self.auth.redirectURL = [NSURL URLWithString:@""];
         self.auth.sessionUserDefaultsKey = @"current session";
         self.auth.requestedScopes = @[SPTAuthStreamingScope, SPTAuthUserLibraryReadScope];
         
@@ -71,6 +71,7 @@
             NSLog(@"*** failed to play: %@", error);
             return;
         }
+        self.currentTrackURI = track.uri.absoluteString;
     }];
 }
 
@@ -112,10 +113,6 @@
     if ([self.delegate respondsToSelector:@selector(spotifyManager:didChangePlaybackStatus:)]) {
         [self.delegate spotifyManager:self didChangePlaybackStatus:isPlaying];
     }
-}
-
-- (void)audioStreaming:(SPTAudioStreamingController *)audioStreaming didStartPlayingTrack:(NSString *)trackUri {
-    self.currentTrackURI = trackUri;
 }
 
 @end
