@@ -21,8 +21,8 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.auth = [SPTAuth defaultInstance];
-        self.auth.clientID = @"361f4baa4d6f4687815f06b86e08ff1e";
-        self.auth.redirectURL = [NSURL URLWithString:@"musiq-rn://auth"];
+        self.auth.clientID = @"{CLIENT_ID}";
+        self.auth.redirectURL = [NSURL URLWithString:@"{REDIRECT_URL}"];
         self.auth.sessionUserDefaultsKey = @"current session";
         self.auth.requestedScopes = @[SPTAuthStreamingScope, SPTAuthUserLibraryReadScope];
         
