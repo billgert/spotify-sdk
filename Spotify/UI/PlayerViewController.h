@@ -12,7 +12,7 @@
 
 @interface PlayerViewController : UIViewController
 
-@property (nonatomic, strong) SpotifyManager *spotifyManager;
-@property (nonatomic, strong) SPTTrack *track;
+@property (strong, nonatomic) SpotifyManager *spotifyManager;
+@property (strong, nonatomic) SPTTrack *track;
 
 @end

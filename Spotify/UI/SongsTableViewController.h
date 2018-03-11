@@ -12,6 +12,6 @@
 
 @interface SongsTableViewController : UITableViewController
 
-@property (nonatomic, strong) SpotifyManager *spotifyManager;
+@property (strong, nonatomic) SpotifyManager *spotifyManager;
 
 @end

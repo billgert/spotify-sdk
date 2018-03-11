@@ -13,11 +13,13 @@
 
 @interface LoginViewController () <SpotifyManagerDelegate>
 
-@property (nonatomic, strong) UIViewController *authViewController;
+@property (strong, nonatomic) UIViewController *authViewController;
 
 @end
 
 @implementation LoginViewController
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];

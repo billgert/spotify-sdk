@@ -15,13 +15,15 @@
 
 @protocol SpotifyManagerDelegate <NSObject>
 
+@optional
 - (void)spotifyManagerDidLogin:(SpotifyManager *)spotifyManager;
+- (void)spotifyManager:(SpotifyManager *)spotifyManager didChangePlaybackStatus:(BOOL)isPlaying;
 
 @end
 
 @interface SpotifyManager : NSObject
 
-@property (nonatomic, weak) id <SpotifyManagerDelegate> delegate;
+@property (weak, nonatomic) id <SpotifyManagerDelegate> delegate;
 
 // Auth
 - (BOOL)isSessionValid;
@@ -32,7 +34,11 @@
 // Player
 - (void)login;
 - (void)loginWithSession:(SPTSession *)session;
-- (void)playURI:(NSString *)uri;
+- (void)playTrack:(SPTTrack *)track;
+- (void)play;
+- (void)pause;
+- (BOOL)isPlaying;
+- (BOOL)isCurrentTrack:(SPTTrack *)track;
 
 // User
 - (void)getSavedTracks:(void (^)(NSError *error, NSArray<SPTSavedTrack*> *tracks))callback;

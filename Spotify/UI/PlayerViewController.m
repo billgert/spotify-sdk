@@ -7,21 +7,53 @@
 //
 
 #import "PlayerViewController.h"
+#import "SpotifyManager.h"
 
-@interface PlayerViewController ()
+@interface PlayerViewController () <SpotifyManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 
 @end
 
 @implementation PlayerViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = self.track.name;
+    
+    self.spotifyManager.delegate = self;
+    
+    if (![self.spotifyManager isCurrentTrack:self.track]) {
+        [self.spotifyManager playTrack:self.track];
+    }
+    
+    [self updateToggleButtonTitle:[self.spotifyManager isPlaying]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Touches
+
+- (IBAction)toggle:(UIButton *)sender {
+    if ([self.spotifyManager isPlaying]) {
+        [self.spotifyManager pause];
+    } else {
+        [self.spotifyManager play];
+    }
+}
+
+#pragma mark - SpotifyManagerDelegate
+
+- (void)spotifyManager:(SpotifyManager *)spotifyManager didChangePlaybackStatus:(BOOL)isPlaying {
+    [self updateToggleButtonTitle:isPlaying];
+}
+
+#pragma mark - Helpers
+
+- (void)updateToggleButtonTitle:(BOOL)isPlaying {
+    NSString *title = isPlaying ? @"PAUSE" : @"PLAY";
+    [self.toggleButton setTitle:title forState:UIControlStateNormal];
 }
 
 @end

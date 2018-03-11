@@ -19,7 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-Ch-q92">
-                                <rect key="frame" x="164.5" y="350.5" width="45" height="30"/>
+                                <rect key="frame" x="137" y="340.5" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="GqG-fC-V0c"/>
+                                    <constraint firstAttribute="height" constant="50" id="NqC-MG-CMT"/>
+                                </constraints>
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="didTapLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j5C-N4-fla"/>
@@ -49,9 +53,29 @@
                     <view key="view" contentMode="scaleToFill" id="DJd-94-l4h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqV-3i-Q3b">
+                                <rect key="frame" x="137" y="340.5" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ysp-RK-XqJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="d2D-db-8BK"/>
+                                </constraints>
+                                <state key="normal" title="LOADING"/>
+                                <connections>
+                                    <action selector="toggle:" destination="gha-fn-BlS" eventType="touchUpInside" id="w4z-eX-t2W"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AqV-3i-Q3b" firstAttribute="centerY" secondItem="WNf-4i-u8R" secondAttribute="centerY" id="nht-fK-zAt"/>
+                            <constraint firstItem="AqV-3i-Q3b" firstAttribute="centerX" secondItem="WNf-4i-u8R" secondAttribute="centerX" id="tOe-mK-FRd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WNf-4i-u8R"/>
                     </view>
+                    <connections>
+                        <outlet property="toggleButton" destination="AqV-3i-Q3b" id="s2Z-3S-mqa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pkh-Cj-aod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

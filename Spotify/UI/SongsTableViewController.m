@@ -12,11 +12,13 @@
 
 @interface SongsTableViewController ()
 
-@property (nonatomic, strong) NSArray<SPTSavedTrack*> *tracks;
+@property (strong, nonatomic) NSArray<SPTSavedTrack*> *tracks;
 
 @end
 
 @implementation SongsTableViewController
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
