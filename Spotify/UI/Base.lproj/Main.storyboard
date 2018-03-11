@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="620" y="32"/>
         </scene>
-        <!--View Controller-->
+        <!--Player View Controller-->
         <scene sceneID="LBo-WS-dBx">
             <objects>
-                <viewController id="gha-fn-BlS" sceneMemberID="viewController">
+                <viewController id="gha-fn-BlS" customClass="PlayerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DJd-94-l4h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SpotifyManager, SPTTrack;
+
 @interface PlayerViewController : UIViewController
+
+@property (nonatomic, strong) SpotifyManager *spotifyManager;
+@property (nonatomic, strong) SPTTrack *track;
 
 @end

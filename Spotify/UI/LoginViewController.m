@@ -47,7 +47,7 @@
         [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         self.authViewController = nil;
     }
-    [self performSegueWithIdentifier:@"showSongs" sender:spotifyManager];
+    [self performSegueWithIdentifier:@"showSongs" sender:nil];
 }
 
 #pragma mark - Navigation
@@ -55,7 +55,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showSongs"]) {
         SongsTableViewController *songsTableViewController = [segue destinationViewController];
-        songsTableViewController.spotifyManager = (SpotifyManager *)sender;
+        songsTableViewController.spotifyManager = self.spotifyManager;
     }
 }
 

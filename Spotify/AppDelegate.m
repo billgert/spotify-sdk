@@ -33,7 +33,7 @@
             openURL:(NSURL *)url
             options:(NSDictionary *)options {
     if ([self.spotifyManager isValidURL:url]) {
-        [self.spotifyManager createSessionWithURL:url completion:^(NSError *error, SPTSession *session) {
+        [self.spotifyManager createSessionWithURL:url callback:^(NSError *error, SPTSession *session) {
             if (session) {
                 [self.spotifyManager loginWithSession:session];
             }

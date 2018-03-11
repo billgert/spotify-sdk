@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SpotifyAuthentication/SpotifyAuthentication.h>
+#import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
+#import <SpotifyMetadata/SpotifyMetadata.h>
 
-@class SpotifyManager, SPTSession;
+@class SpotifyManager;
 
 @protocol SpotifyManagerDelegate <NSObject>
 
@@ -24,11 +27,14 @@
 - (BOOL)isSessionValid;
 - (NSURL *)authenticationURL;
 - (BOOL)isValidURL:(NSURL *)url;
-- (void)createSessionWithURL:(NSURL *)url completion:(void (^)(NSError *error, SPTSession *session))completion;
+- (void)createSessionWithURL:(NSURL *)url callback:(void (^)(NSError *error, SPTSession *session))callback;
 
 // Player
 - (void)login;
 - (void)loginWithSession:(SPTSession *)session;
 - (void)playURI:(NSString *)uri;
-    
+
+// User
+- (void)getSavedTracks:(void (^)(NSError *error, NSArray<SPTSavedTrack*> *tracks))callback;
+
 @end

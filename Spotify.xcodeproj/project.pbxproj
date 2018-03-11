@@ -17,6 +17,7 @@
 		182ACE7020554900002BEC8D /* SongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182ACE6F20554900002BEC8D /* SongsTableViewController.m */; };
 		182ACE7720554B4B002BEC8D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182ACE7620554B4B002BEC8D /* AVFoundation.framework */; };
 		182ACE7920554B54002BEC8D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182ACE7820554B54002BEC8D /* SystemConfiguration.framework */; };
+		18A0073D2055A22D00A0B063 /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A0073C2055A22D00A0B063 /* SpotifyMetadata.framework */; };
 		18A4DA4E20554D1900A54C46 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A4DA4C20554D1900A54C46 /* SpotifyAudioPlayback.framework */; };
 		18A4DA4F20554D1900A54C46 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A4DA4D20554D1900A54C46 /* SpotifyAuthentication.framework */; };
 		18A4DA522055513200A54C46 /* SpotifyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4DA512055513200A54C46 /* SpotifyManager.m */; };
@@ -39,6 +40,7 @@
 		182ACE6F20554900002BEC8D /* SongsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongsTableViewController.m; sourceTree = "<group>"; };
 		182ACE7620554B4B002BEC8D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		182ACE7820554B54002BEC8D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		18A0073C2055A22D00A0B063 /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
 		18A4DA4C20554D1900A54C46 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		18A4DA4D20554D1900A54C46 /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
 		18A4DA502055513200A54C46 /* SpotifyManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotifyManager.h; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A0073D2055A22D00A0B063 /* SpotifyMetadata.framework in Frameworks */,
 				182ACE7920554B54002BEC8D /* SystemConfiguration.framework in Frameworks */,
 				18A4DA4F20554D1900A54C46 /* SpotifyAuthentication.framework in Frameworks */,
 				182ACE7720554B4B002BEC8D /* AVFoundation.framework in Frameworks */,
@@ -98,6 +101,7 @@
 				182ACE7620554B4B002BEC8D /* AVFoundation.framework */,
 				18A4DA4C20554D1900A54C46 /* SpotifyAudioPlayback.framework */,
 				18A4DA4D20554D1900A54C46 /* SpotifyAuthentication.framework */,
+				18A0073C2055A22D00A0B063 /* SpotifyMetadata.framework */,
 				182ACE7820554B54002BEC8D /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
