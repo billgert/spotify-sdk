@@ -21,13 +21,25 @@
 
 #pragma mark - Lifecycle
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.spotifyManager.delegate = self;
 }
 
+#pragma mark - Touches
+
 - (IBAction)didTapLoginButton:(UIButton *)sender {
     [self startAuthenticationFlow];
+}
+
+#pragma mark - SpotifyManagerDelegate
+
+- (void)spotifyManagerDidLogin:(SpotifyManager *)spotifyManager {
+    if (self.authViewController) {
+        [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        self.authViewController = nil;
+    }
+    [self performSegueWithIdentifier:@"showSongs" sender:nil];
 }
 
 #pragma mark - Helpers
@@ -40,16 +52,6 @@
         self.authViewController = [[SFSafariViewController alloc] initWithURL:authURL];
         [self presentViewController:self.authViewController animated:YES completion:nil];
     }
-}
-
-#pragma mark - SpotifyManagerDelegate
-
-- (void)spotifyManagerDidLogin:(SpotifyManager *)spotifyManager {
-    if (self.authViewController) {
-        [self.authViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-        self.authViewController = nil;
-    }
-    [self performSegueWithIdentifier:@"showSongs" sender:nil];
 }
 
 #pragma mark - Navigation

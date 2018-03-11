@@ -24,13 +24,16 @@
     
     self.navigationItem.title = self.track.name;
     
-    self.spotifyManager.delegate = self;
-    
     if (![self.spotifyManager isCurrentTrack:self.track]) {
         [self.spotifyManager playTrack:self.track];
     }
     
     [self updateToggleButtonTitle:[self.spotifyManager isPlaying]];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.spotifyManager.delegate = self;
 }
 
 #pragma mark - Touches
